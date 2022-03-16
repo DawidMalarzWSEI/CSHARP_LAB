@@ -20,6 +20,7 @@ namespace Lab1
             gauge = fraction.gauge;
             denominator = fraction.denominator;
         }
+        public override string ToString() => $"{gauge} / {denominator}";
 
     }
 }
