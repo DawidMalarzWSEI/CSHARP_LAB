@@ -39,6 +39,28 @@ namespace Lab1
 
             return new Fraction(a.gauge * b.denominator, a.denominator * b.gauge);
         }
+
+        public int CompareTo(Fraction otherFraction)
+        {
+            if (otherFraction == null) return 1;
+
+            if (otherFraction != null)
+                return ((float)gauge / denominator).CompareTo((float)otherFraction.gauge / otherFraction.denominator);
+            else
+                throw new ArgumentException("Object is not a Fraction");
+        }
+
+        public bool Equals(Fraction other)
+        {
+            if (other == null)
+                return false;
+
+            if (this.gauge == other.gauge && this.denominator == other.denominator)
+                return true;
+            else
+                return false;
+        }
+
         public override string ToString() => $"{gauge} / {denominator}";
 
     }
