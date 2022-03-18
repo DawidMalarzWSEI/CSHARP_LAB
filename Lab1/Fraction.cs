@@ -51,6 +51,15 @@ namespace Lab1
             return new Fraction(a.gauge * b.denominator, a.denominator * b.gauge);
         }
 
+        public double RoundDown()
+        { 
+            return Math.Floor((double)gauge / denominator);
+        }
+        public double RoundUp()
+        {
+            return Math.Ceiling((double)gauge / denominator);
+        }
+
         public int CompareTo(Fraction otherFraction)
         {
             if (otherFraction == null) return 1;
