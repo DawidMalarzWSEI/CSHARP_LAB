@@ -2,7 +2,7 @@
 
 namespace Lab1
 {
-    public class Fraction
+    public class Fraction : IComparable<Fraction>, IEquatable<Fraction>
     {
         private int gauge = 0;
         private int denominator = 1;
