@@ -20,6 +20,17 @@ namespace Lab1
             gauge = fraction.gauge;
             denominator = fraction.denominator;
         }
+
+        public int Gauge
+        {
+            get { return gauge; }
+        }
+
+        public int Denominator
+        {
+            get { return denominator; }
+        }
+
         public static Fraction operator +(Fraction a) => a;
 
         public static Fraction operator -(Fraction a) => new(-a.gauge, a.denominator);
