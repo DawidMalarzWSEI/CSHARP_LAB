@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Lab1
 {
-    class Fraction
+    public class Fraction
     {
         private int gauge = 0;
         private int denominator = 1;
@@ -81,7 +79,7 @@ namespace Lab1
                 return false;
         }
 
-        public override string ToString() => $"{gauge} / {denominator}";
+        public override string ToString() => $"{gauge}/{denominator}";
 
     }
 }
