@@ -49,10 +49,18 @@ namespace Lab1
             return new Fraction(a.gauge * b.denominator, a.denominator * b.gauge);
         }
 
+        /// <summary>
+        /// fraction rounded down
+        /// </summary>
+        /// <returns>returns the fraction rounded down</returns>
         public double RoundDown()
         { 
             return Math.Floor((double)gauge / denominator);
         }
+        /// <summary>
+        /// fraction rounded up
+        /// </summary>
+        /// <returns>returns the fraction rounded up</returns>
         public double RoundUp()
         {
             return Math.Ceiling((double)gauge / denominator);
@@ -67,7 +75,11 @@ namespace Lab1
             else
                 throw new ArgumentException("Object is not a Fraction");
         }
-
+        /// <summary>
+        /// Checks if fractions have the same values
+        /// </summary>
+        /// <param name="other">other fraction</param>
+        /// <returns>Return true when values are the same, false when not</returns>
         public bool Equals(Fraction other)
         {
             if (other == null)
