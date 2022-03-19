@@ -6,7 +6,7 @@ namespace Lab2
     {
         public static void Main()
         {
-            Teacher treacher = new Teacher("Maria Skłodowska", 50);
+            Teacher teacher = new Teacher("Maria Skłodowska", 50);
 
             Student student1 = new Student("Jan Kowaslski", 21, "LAB-01");
             Student student2 = new Student("Jan Kowaslski", 21, "LAB-01");
@@ -26,6 +26,7 @@ namespace Lab2
 
             student3.UpdateTask(1, TaskStatus.Done);
             student3.UpdateTask(2, TaskStatus.Progress);
+            student1.RenderTasks();
 
             Person[] persons = { treacher, student1, student2, student3 };
             Classroom classroom = new Classroom("Sala Komputerowa", persons);
