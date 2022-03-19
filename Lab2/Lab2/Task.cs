@@ -15,7 +15,7 @@ namespace Lab2
     }
 
 
-    class Task
+    class Task : IEquatable<Task>
     {
         private string name;
         private TaskStatus status;
@@ -28,6 +28,16 @@ namespace Lab2
             this.status = status;
         }
 
+        public bool Equals(Task other = null)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (name == other.name && status == other.status)
+                return true;
+            return false;
+        }
         public override string ToString()
         {
             return $"Tasks: {name} [{status}]";
