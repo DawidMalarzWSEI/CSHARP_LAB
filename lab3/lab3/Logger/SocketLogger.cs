@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ConsoleApp.Logger;
 
 namespace Lab3.Logger
 {
-    public class SocketLogger : ILogger
+    public abstract class SocketLogger : ILogger
     {
         protected ClientSocket clientSocket;
 

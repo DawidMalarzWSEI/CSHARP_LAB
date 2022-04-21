@@ -11,12 +11,12 @@ namespace lab3.Logger
     {
         public ConsoleLogger()
         {
-
+            writer = Console.Out;
         }
 
         public override void Dispose()
         {
-            throw new NotImplementedException();
+            writer.Dispose();
         }
     }
 }

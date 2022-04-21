@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace ConsoleApp.Logger
 {
@@ -8,7 +9,8 @@ namespace ConsoleApp.Logger
 
         public virtual void Log(params string[] messages)
         {
-            // Uzupełnić to miejsce o logikę zapisu opartą o TextWriter ...
+            writer.Write(messages);
+            writer.Flush();
         }
 
         public abstract void Dispose();
