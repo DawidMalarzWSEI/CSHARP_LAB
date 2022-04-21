@@ -25,7 +25,8 @@ namespace lab3.Logger
         {
             foreach (var logger in loggers)
             {
-                logger.Log();
+                logger.Log(messages);
+                
             }
         }
     }

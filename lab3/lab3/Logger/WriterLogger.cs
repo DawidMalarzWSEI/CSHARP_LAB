@@ -9,7 +9,7 @@ namespace ConsoleApp.Logger
 
         public virtual void Log(params string[] messages)
         {
-            writer.Write(messages);
+            writer.WriteLine(messages[0]);
             writer.Flush();
         }
 
