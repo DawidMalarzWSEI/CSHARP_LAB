@@ -10,18 +10,12 @@ namespace ConsoleApp.Logger
         public virtual void Log(params string[] messages)
         {
             writer.Write($"{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss:K")} ");
-            if (messages.Length == 4)
-            {
-                foreach (var message in messages)
-                {     
-                    writer.Write(message);
-                    writer.Write(" ");
-                }
-            }
-            else
-            {
-                writer.WriteLine(messages[0]);
+            string endline = (messages.Length != 1) ? " " : "\n";
 
+            foreach (var message in messages)
+            {
+
+                writer.Write($"{message}{endline}");
             }
             writer.Flush();
         }
