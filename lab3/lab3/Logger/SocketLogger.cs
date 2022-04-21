@@ -5,55 +5,49 @@ using ConsoleApp.Logger;
 
 namespace Lab3.Logger
 {
-    public abstract class SocketLogger : ILogger
+    public class SocketLogger : ILogger
     {
-        protected ClientSocket clientSocket;
-
-        public SocketLogger()
-        {
-
-        }
+        private ClientSocket clientSocket;
+        private bool disposedValue;
 
         public SocketLogger(string host, int port)
         {
-
+            this.clientSocket = new ClientSocket(host, port);
         }
-
-        ~SocketLogger() { }
-
-        public abstract void Dispose();
 
         public void Log(params string[] messages)
         {
-            string host = "google.com";
-            int port = 80;
-
-            using (ClientSocket clientSocket = new ClientSocket(host, port))
+            try
             {
-                // request:
-
-                foreach (var a in messages)
-                {
-                    string requestText = a;
-                    byte[] requestBytes = Encoding.UTF8.GetBytes(requestText);
-
-                    clientSocket.Send(requestBytes);
-                }
-
-
-                // response:
-
-                byte[] responseBuffer = new byte[1024];
-                int responseSize = clientSocket.Receive(responseBuffer);
-
-                string responseText = Encoding.UTF8.GetString(responseBuffer, 0, responseSize); // received message
-
-                // ...
-
-                // cleaning:
-
-                clientSocket.Close();
+                foreach (var message in messages) clientSocket.Send(Encoding.UTF8.GetBytes(message));
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                    clientSocket.Dispose();
+
+                disposedValue = true;
+            }
+        }
+
+
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
+
+        ~SocketLogger()
+        {
+            Dispose(disposing: false);
         }
     }
 }

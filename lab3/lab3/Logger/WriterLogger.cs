@@ -13,8 +13,7 @@ namespace ConsoleApp.Logger
             if (messages.Length == 4)
             {
                 foreach (var message in messages)
-                {
-                    
+                {     
                     writer.Write(message);
                     writer.Write(" ");
                 }
