@@ -86,7 +86,6 @@ namespace lab4
         public void Log()
         {
             List<string> COLUMNS = new List<string> { "count", "total size", "avg size", "min size", "max size" };
-            List<string> SIZE_INDEX = new List<string> { "     . <= 1KB ", "1KB < . <= 1MB", "1MB < . <= 1GB", "1GB < .       " };
 
             List<string> byCategory = new ByCategory(files).Find();
             List<string> byExtension = new ByExtension(files).Find();
@@ -106,7 +105,13 @@ namespace lab4
             
             HorizontalTable countLetters = new HorizontalTable("Counts by first leter:", countsFirstLetter);
 
-
+            System.Text.StringBuilder log = new System.Text.StringBuilder();
+            log.Append(String.Format("Nodes:\n"));
+            log.Append(String.Format("{0, 38} {1, 15}\n", $"[count]", $"[total size]"));
+            log.Append(String.Format("{0, 20} {1, 15} {2, 15}\n", "Directories:", $"{dirsCount}", $"{Utils.GetFileSize(filesSize)}"));
+            log.Append(String.Format("{0, 20} {1, 15} {2, 15}\n", "Files:", $"{filesCount}", $"{Utils.GetFileSize(filesSize)}"));
+            Console.WriteLine(log.ToString());
+            Console.WriteLine("Files: ");
             foreach (var table in tables)
             {
                 table.Print();
