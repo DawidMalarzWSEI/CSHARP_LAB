@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace lab4
 {
@@ -6,7 +8,13 @@ namespace lab4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Podaj ścieżkę bezwględną do folderu: ");
+
+            string rootDir = Console.ReadLine();
+
+            RecursiveFileProcessor processor = new RecursiveFileProcessor();
+            processor.Run(rootDir);
+            processor.Log();
         }
     }
 }
