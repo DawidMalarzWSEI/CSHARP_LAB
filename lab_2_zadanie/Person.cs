@@ -22,7 +22,7 @@ namespace lab_2_zadanie
 
         public virtual void Print(string prefix = "\t")
         {
-            Console.Write($"{prefix} {this.name}");
+            Console.Write($"{prefix} {this.name} ");
         }
     }
 }
