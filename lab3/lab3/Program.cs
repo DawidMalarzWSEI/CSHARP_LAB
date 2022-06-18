@@ -1,10 +1,11 @@
 ﻿using System;
 using ConsoleApp.Logger;
 using lab3.Logger;
+using Lab3.Logger;
 
 namespace lab3
 {
-    public class Program
+    class Program
     {
         public static void Main()
         {

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace ConsoleApp.Logger
 {
@@ -8,9 +9,16 @@ namespace ConsoleApp.Logger
 
         public virtual void Log(params string[] messages)
         {
-            // Uzupełnić to miejsce o logikę zapisu opartą o TextWriter ...
-        }
+            writer.Write($"{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss:K")} ");
+            string endline = (messages.Length != 1) ? " " : "\n";
 
+            foreach (var message in messages)
+            {
+
+                writer.Write($"{message}{endline}");
+            }
+            writer.Flush();
+        }
         public abstract void Dispose();
     }
 }
