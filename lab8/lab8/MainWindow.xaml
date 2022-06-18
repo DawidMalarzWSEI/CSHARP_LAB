@@ -1,0 +1,47 @@
+﻿<Window x:Class="lab8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <StackPanel x:Name="pnlTypes" Orientation="Horizontal">
+                <Button x:Name="textBtn" Width="40" Height="20" Margin="10 0 0 0" Content="Text" Click="textBtn_Click"/>
+                <Button x:Name="bashBtn" Width="40" Height="20" Margin="10 0 0 0" Content="Bash" Click="bashBtn_Click"/>
+                <Button x:Name="cppBtn" Width="40" Height="20" Margin="10 0 0 0" Content="C++" Click="cppBtn_Click"/>
+                <Button x:Name="csharpBtn" Width="40" Height="20" Margin="10 0 0 0" Content="C#" Click="csharpBtn_Click"/>
+                <Button x:Name="javaBtn" Width="40" Height="20" Margin="10 0 0 0" Content="Java" Click="javaBtn_Click"/>
+                <Button x:Name="cssBtn" Width="40" Height="20" Margin="10 0 0 0" Content="CSS" Click="cssBtn_Click"/>
+                <Button x:Name="htmlBtn" Width="40" Height="20" Margin="10 0 0 0" Content="HTML" Click="htmlBtn_Click"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Width="30" Height="20" Margin="10 0 0 0" Content="Text"/>
+                <Button Width="30" Height="20" Margin="10 0 0 0" Content="Text"/>
+
+            </StackPanel>
+
+        </Border>
+        <Border Grid.Row="2">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns = "False">
+                <DataGrid.Columns>
+                    <!--<DataGridTextColumn Width="*" Header = "Snippet Size" Binding = "{Binding size}" Visibility="Hidden" />-->
+                    <DataGridTextColumn Width="*" Header = "Snippet Type" Binding = "{Binding Type}" />
+                    <DataGridTextColumn Width="*" Header = "Snippet Name" Binding = "{Binding Name}" />
+                    <!--<DataGridTextColumn Width="*" Header = "Snippet creationTime" Binding = "{Binding creationTime}" Visibility="Hidden" />-->
+                    <DataGridTextColumn Width="*" Header = "Update time" Binding = "{Binding UpdateTime}" />
+                </DataGrid.Columns>
+                
+            </DataGrid>
+        </Border>
+    </Grid>
+</Window>
