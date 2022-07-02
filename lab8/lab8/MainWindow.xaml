@@ -15,17 +15,17 @@
         <Border Grid.Row="0">
             <StackPanel x:Name="pnlTypes" Orientation="Horizontal">
                 <Button x:Name="textBtn" Width="40" Height="20" Margin="10 0 0 0" Content="Text" Click="textBtn_Click"/>
-                <Button x:Name="bashBtn" Width="40" Height="20" Margin="10 0 0 0" Content="Bash" Click="bashBtn_Click"/>
-                <Button x:Name="cppBtn" Width="40" Height="20" Margin="10 0 0 0" Content="C++" Click="cppBtn_Click"/>
-                <Button x:Name="csharpBtn" Width="40" Height="20" Margin="10 0 0 0" Content="C#" Click="csharpBtn_Click"/>
-                <Button x:Name="javaBtn" Width="40" Height="20" Margin="10 0 0 0" Content="Java" Click="javaBtn_Click"/>
-                <Button x:Name="cssBtn" Width="40" Height="20" Margin="10 0 0 0" Content="CSS" Click="cssBtn_Click"/>
-                <Button x:Name="htmlBtn" Width="40" Height="20" Margin="10 0 0 0" Content="HTML" Click="htmlBtn_Click"/>
+                <Button x:Name="bashBtn" Width="40" Height="20" Margin="10 0 0 0" Content="Bash" Click="bashBtn_Click" Background="#FF30D677"/>
+                <Button x:Name="cppBtn" Width="40" Height="20" Margin="10 0 0 0" Content="C++" Click="cppBtn_Click" Background="#FF005697" Foreground="White"/>
+                <Button x:Name="csharpBtn" Width="40" Height="20" Margin="10 0 0 0" Content="C#" Click="csharpBtn_Click" Background="#FF7024B5"  Foreground="White"/>
+                <Button x:Name="javaBtn" Width="40" Height="20" Margin="10 0 0 0" Content="Java" Click="javaBtn_Click" Background="#FF295486"  Foreground="White"/>
+                <Button x:Name="cssBtn" Width="40" Height="20" Margin="10 0 0 0" Content="CSS" Click="cssBtn_Click" Background="#FF1C63B6"  Foreground="White"/>
+                <Button x:Name="htmlBtn" Width="40" Height="20" Margin="10 0 0 0" Content="HTML" Click="htmlBtn_Click" Background="#FFE44D26"  Foreground="White"/>
             </StackPanel>
         </Border>
         <Border Grid.Row="1">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Width="30" Height="20" Margin="10 0 0 0" Content="Text"/>
+                <Button Width="30" Height="20" Content="Text" Background="#FF007BFF"/>
                 <Button Width="30" Height="20" Margin="10 0 0 0" Content="Text"/>
 
             </StackPanel>
@@ -40,7 +40,7 @@
                     <!--<DataGridTextColumn Width="*" Header = "Snippet creationTime" Binding = "{Binding creationTime}" Visibility="Hidden" />-->
                     <DataGridTextColumn Width="*" Header = "Update time" Binding = "{Binding UpdateTime}" />
                 </DataGrid.Columns>
-                
+
             </DataGrid>
         </Border>
     </Grid>
