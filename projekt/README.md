@@ -1,5 +1,5 @@
 # Temat projektu: Aplikacja do zarządzania sklepami
-
+## LINK: [Click](https://github.com/DawidMalarzWSEI/ShopAppLab)
 ## Wizualnie
 ### Okno Logowania
 - Pola do wprowadzania danych - przycisk "ZALOGUJ"
